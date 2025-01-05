@@ -1,11 +1,16 @@
-function App() {
+import React from 'react';
+import Navbar from './components/Navbar';
+import Routing from './web/Routing'
+import Footer from './components/Footer';
 
+function App() {
   return (
     <>
-      <p className="">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar />
+      <Routing />
+      <Footer />
     </>
-  )
+  );
 }
-export default App
+
+export default App;
