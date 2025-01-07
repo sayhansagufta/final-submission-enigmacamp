@@ -1,12 +1,15 @@
-import AboutPage from "./pages/AboutPage"
+import Navbar from './components/Navbar';
+import Routing from './web/Routing'
+import Footer from './components/Footer';
 
 function App() {
-
   return (
     <>
-      {/* Andre */}
-      <AboutPage />
+      <Navbar />
+      <Routing />
+      <Footer />
     </>
-  )
+  );
 }
-export default App
+
+export default App;
