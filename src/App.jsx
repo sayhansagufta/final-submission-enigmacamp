@@ -1,11 +1,13 @@
-function App() {
+import { Route, Routes } from "react-router-dom";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 
+function App() {
   return (
-    <>
-      <p className="">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route element={<SignUp />} path="/" />
+      <Route element={<SignIn />} path="/login" />
+    </Routes>
+  );
 }
-export default App
+export default App;

@@ -7,6 +7,18 @@
       "password": "password",
       "type": "ADMIN",
       "created_at": "'2025-01-04T08:15:10.587Z"
+    },
+    {
+      "id": "2ff8",
+      "name": "Shayhan Sagufta",
+      "username": "Shayhan12",
+      "password": "Sehan123"
+    },
+    {
+      "id": "17a4",
+      "name": "Shayhan Sagufta",
+      "username": "sayhan_sagufta23",
+      "password": "Sehan123"
     }
   ],
   "categories": [
