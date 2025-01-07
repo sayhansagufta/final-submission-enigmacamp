@@ -1,13 +1,15 @@
-import { Route, Routes } from "react-router-dom";
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
-
+import Navbar from './components/Navbar';
+import Routing from './web/Routing'
+import Footer from './components/Footer';
 function App() {
   return (
-    <Routes>
-      <Route element={<SignUp />} path="/" />
-      <Route element={<SignIn />} path="/login" />
-    </Routes>
+    <>
+      <Navbar />
+      <Routing />
+      <Footer />
+    </>
   );
 }
+
 export default App;
+

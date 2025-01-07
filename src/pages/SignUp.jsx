@@ -5,8 +5,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input } from "@nextui-org/react";
 import { Link } from "react-router-dom";
-import { axiosInstance } from "../lib/axios";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from "../services/userService";
 // import { toast } from "sonner";
 // import { axiosInstance } from "../../lib/axios";
 // import { useEffect } from "react";
@@ -53,41 +53,34 @@ const SignUp = () => {
     resolver: zodResolver(signUpFormSchema),
   });
 
-  // Fungsi untuk create user (signup)
-  const addRegisterUser = async (data) => {
+  // fungsi untuk register
+  const addRegisterUser = async (userData) => {
     try {
-      // Kirim data ke endpoint JSON SERVER
-      const { name, username, password } = data;
-      const response = await axiosInstance.post("/users", {
-        name,
-        username,
-        password,
-      });
+      // Kirim data ke endpoint JSON SERVER import dari registerUser
+      const response = await registerUser(userData);
+      // Pesan berhasil melalui alert
       alert("You Have an Register Account! Please Login!");
-      console.log("User registered successfully:", response.data);
+      // Pesan Berhasil melalui console
+      console.log("User registered successfully:", response);
       // Navigasi ke halaman login setelah registrasi berhasil
       navigate("/login");
-      // toast.success("You Have an Register Account! Please Login!");
     } catch (error) {
+      // Register failed maka muncul pesan console
       console.error("Error during registration:", error);
+      // Register failed maka muncul alert
       alert("Registrasi gagal. Silakan coba lagi.");
     }
   };
 
-  //   Fungsi untuk Test Submit Data
-  // const registerUser = (data) => {
-  // console.log(data);
-  // };
-
   return (
     // Container
-    <div className="py-20" style={styles}>
+    <div className="py-2" style={styles}>
       {/* Background Image */}
       <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div className="hidden lg:block lg:w-1/2 bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')" }}></div>
         {/* Form Section */}
         <form onSubmit={form.handleSubmit(addRegisterUser)} className="w-full p-8 lg:w-1/2">
-          <h2 className="text-2xl font-semibold text-slate-950 text-left">Daftar Dulu ya!</h2>
+          <h2 className="text-2xl font-bold text-slate-950 text-left">Daftar Dulu ya!</h2>
           <p className="text-small py-3 font-normal text-slate-700 ">Buat akunmu sekarang untuk pengalaman terbaik! Isi data dengan lengkap dan nikmati fitur menarik yang kami tawarkan.</p>
           {/* Nama Lengkap Section */}
           <div className="mt-4">
@@ -155,13 +148,9 @@ const SignUp = () => {
           {/* Link to Apakah jika Sudah Mempunyai Akun */}
           <div className="mt-4 flex items-center justify-between">
             <span className="border-b w-1/5 md:w-1/4"></span>
-            {/* <Link to="/wishlist">To wishlist page</Link> */}
             <Link to="/login" className="text-xs text-buttonColor ">
               Sudah Punya Akun?
             </Link>
-            {/* <a href="#" className="text-xs text-buttonColor uppercase"> */}
-            {/* Sudah Punya Akun ? */}
-            {/* </a> */}
             <span className="border-b w-1/5 md:w-1/4"></span>
           </div>
           {/* End Form Section */}
