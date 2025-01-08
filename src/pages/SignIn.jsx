@@ -5,6 +5,7 @@ import { Button, Input } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 import { loginUser } from "../services/userService";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 // Validate Login Section
 const LoginFormSchema = z.object({
@@ -40,10 +41,52 @@ const SignIn = () => {
   const loggedIn = async (loginData) => {
     try {
       const response = await loginUser(loginData);
-      console.log("Response Data:", response);
-      navigate("/");
+      toast.success(
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src="https://img.icons8.com/ios-filled/50/4CAF50/
+checkmark.png"
+            alt="Success Icon"
+            style={{ marginRight: "10px" }}
+          />
+          <span>Login Berhasil! Silahkan Login!</span>
+          <Button auto flat onClick={() => toast.dismiss()} style={{ marginLeft: "10px" }}>
+            Close
+          </Button>
+        </div>,
+        {
+          position: "top-center",
+          autoClose: false,
+          closeOnClick: false,
+          draggable: false,
+        }
+      );
+      setTimeout(() => {
+        navigate("/");
+        console.log(response.data);
+      }, 2000);
     } catch (error) {
-      console.error("Terjadi Kesalahan saat login: ", error);
+      toast.error(
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src="https://img.icons8.com/ios-filled/50/FF0000/
+      error.png"
+            alt="Error Icon"
+            style={{ marginRight: "10px" }}
+          />
+          <span>Login Gagal! Silahkan Coba Lagi!</span>
+          <Button auto flat onClick={() => toast.dismiss()} style={{ marginLeft: "10px" }}>
+            Close
+          </Button>
+        </div>,
+        {
+          position: "top-center",
+          autoClose: false,
+          closeOnClick: false,
+          draggable: false,
+        }
+      );
+
       throw error;
     }
   };
@@ -106,6 +149,7 @@ const SignIn = () => {
           {/* End Form Section */}
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

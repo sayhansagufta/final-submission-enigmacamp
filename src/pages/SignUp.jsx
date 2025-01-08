@@ -7,6 +7,8 @@ import { Button, Input } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../services/userService";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import { toast } from "sonner";
 // import { axiosInstance } from "../../lib/axios";
 // import { useEffect } from "react";
@@ -59,16 +61,47 @@ const SignUp = () => {
       // Kirim data ke endpoint JSON SERVER import dari registerUser
       const response = await registerUser(userData);
       // Pesan berhasil melalui alert
-      alert("You Have an Register Account! Please Login!");
+      toast.success(
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src="https://img.icons8.com/ios-filled/50/4CAF50/checkmark.png" alt="Success Icon" style={{ marginRight: "10px" }} />
+          <span>Register Berhasil! Silahkan Login!</span>
+          <Button auto flat onClick={() => toast.dismiss()} style={{ marginLeft: "10px" }}>
+            Close
+          </Button>
+        </div>,
+        {
+          position: "top-center",
+          autoClose: false,
+          closeOnClick: false,
+          draggable: false,
+        }
+      );
       // Pesan Berhasil melalui console
       console.log("User registered successfully:", response);
       // Navigasi ke halaman login setelah registrasi berhasil
-      navigate("/login");
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } catch (error) {
       // Register failed maka muncul pesan console
       console.error("Error during registration:", error);
       // Register failed maka muncul alert
-      alert("Registrasi gagal. Silakan coba lagi.");
+      toast.error(
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src="https://img.icons8.com/ios-filled/50/FF0000/error.png" alt="Error Icon" style={{ marginRight: "10px" }} />
+          <span>Register Gagal! Silahkan Coba Lagi!</span>
+          <Button auto flat onClick={() => toast.dismiss()} style={{ marginLeft: "10px" }}>
+            Close
+          </Button>
+        </div>,
+        {
+          position: "top-center",
+          autoClose: false,
+          closeOnClick: false,
+          draggable: false,
+        }
+      );
+      // alert("Registrasi gagal. Silakan coba lagi.");
     }
   };
 
@@ -156,6 +189,7 @@ const SignUp = () => {
           {/* End Form Section */}
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

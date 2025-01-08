@@ -37,10 +37,11 @@ export const loginUser = async (loginData) => {
       const isValidPassword = await bcrypt.compare(loginData.password, user.password);
       if (isValidPassword) {
         // Jika Username dan Password Cocok
-        alert("Login Berhasil!");
+        // alert("Login Berhasil!");
+        console.log("Login Berhasil!");
         // Direct ke home
       } else {
-        alert("Username atau Password Salah!");
+        console.error("Terjadi Kesalahan saat login:");
       }
     } else {
       // Jika Tidak Cocok
