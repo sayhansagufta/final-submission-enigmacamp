@@ -7,6 +7,14 @@
       "password": "password",
       "type": "ADMIN",
       "created_at": "'2025-01-04T08:15:10.587Z"
+    },
+    {
+      "id": "2",
+      "name": "admin",
+      "username": "admin",
+      "password": "password",
+      "type": "ADMIN",
+      "created_at": "'2025-01-04T08:15:10.587Z"
     }
   ],
   "categories": [
@@ -25,12 +33,27 @@
       "body": "haii haii",
       "isPrivate": true,
       "created_at": "'2025-01-04T08:15:10.587Z"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "categoryId": "1",
+      "title": "hello hai",
+      "body": "haii haii",
+      "isPrivate": true,
+      "created_at": "'2025-01-04T08:15:10.587Z"
     }
   ],
   "favorites": [
     {
       "id": "1",
       "userId": "1",
+      "noteId": "1",
+      "created_at": "'2025-01-04T08:15:10.587Z"
+    },
+    {
+      "id": "2",
+      "userId": "2",
       "noteId": "1",
       "created_at": "'2025-01-04T08:15:10.587Z"
     }

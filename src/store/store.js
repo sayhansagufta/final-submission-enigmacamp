@@ -3,9 +3,6 @@ import { combineReducers, createStore } from "redux";
 const rootReducer = combineReducers({
     //redux masi kosongan
 });
+const store = createStore(rootReducer);
 
-const ConfigureStore = () => {
-    return createStore(rootReducer);
-}
-
-export default ConfigureStore;
+export default store;
