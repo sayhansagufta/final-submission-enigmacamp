@@ -66,7 +66,7 @@ function Home() {
           data-aos="fade-up" data-aos-duration="2500"
           radius='full'
           size="lg"
-          className='bg-white border border-[#5647F9] hover:bg-[#5647F9] hover:text-white group'
+          className='bg-white border text-[#5647F9] border-[#5647F9] hover:bg-[#5647F9] hover:text-white group'
           endContent={<img className='bg-[#5647F9] size-7 p-1 -me-2  rounded-full -rotate-45 group-hover:rotate-0 transition-all duration-500' src="src/assets/svg/arrow.svg" alt="login" />}
         >
           Daftar Sekarang
@@ -76,18 +76,36 @@ function Home() {
         <div className="flex flex-row justify-between items-center max-w-6xl mx-auto py-16">
           <p className="font-bold text-2xl">Cari Catatan <br />
             Berdasarkan Kategori</p>
-          <button className="rounded-full font-semibold border py-2 px-4 border-gray-500 w-fit hover:bg-[#5647F9] hover:text-white">Lihat Semua</button>
+          <Button
+            data-aos="fade-left" data-aos-duration="1000"
+            radius='full'
+            size="lg"
+            className='bg-white border text-[#5647F9] border-[#5647F9] hover:bg-[#5647F9] hover:text-white group'
+            endContent={<img className='bg-[#5647F9] size-7 p-1 -me-2  rounded-full -rotate-45 group-hover:rotate-0 transition-all duration-500' src="src/assets/svg/arrow.svg" alt="login" />}
+          >
+            Lihat Semua
+          </Button>
         </div>
-        <div className="cards flex flex-wrap gap-[31px] max-w-6xl mx-auto">
-          {categories && categories.map((category, index) => {
-            return <Category category={category.name} number={category.notes.length} key={index} />
-          })}
+        <div className="cards flex flex-wrap gap-[15px] max-w-6xl mx-auto overflow-auto max-h-96">
+          {
+            categories && categories.map((category, index) => {
+              return <Category category={category.name} number={category.notes.length} key={index} />
+            })
+          }
         </div>
       </section>
       <section className="populer bg-white pb-40">
         <div className="flex flex-row justify-between items-center max-w-6xl mx-auto py-16">
           <p className="font-bold text-2xl">Catatan Populer</p>
-          <button className="rounded-full font-semibold border py-2 px-4 border-gray-500 w-fit hover:bg-[#5647F9] hover:text-white">Lihat Semua</button>
+          <Button
+            data-aos="fade-left" data-aos-duration="1000"
+            radius='full'
+            size="lg"
+            className='bg-white border text-[#5647F9] border-[#5647F9] hover:bg-[#5647F9] hover:text-white group'
+            endContent={<img className='bg-[#5647F9] size-7 p-1 -me-2  rounded-full -rotate-45 group-hover:rotate-0 transition-all duration-500' src="src/assets/svg/arrow.svg" alt="login" />}
+          >
+            Lihat Semua
+          </Button>
         </div>
         <div className="cards flex flex-row gap-6 max-w-6xl mx-auto">
           {popularNotes && popularNotes.map((item) => {
