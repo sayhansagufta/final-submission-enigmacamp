@@ -1,17 +1,14 @@
-import React from "react";
-import Catatan from "./pages/Catatan";
-
+import Navbar from "./components/Navbar";
+import Routing from "./web/Routing";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      {/* <p className=""> */}
-      {/* Click on the Vite and React logos to learn more */}
-      {/*  */}
-      {/* punya abil untuk testing saja */}
-      <Catatan />
-      {/*  */}
-      {/* </p> */}
+      <Navbar />
+      <Routing />
+      <Footer />
     </>
   );
 }
+
 export default App;
