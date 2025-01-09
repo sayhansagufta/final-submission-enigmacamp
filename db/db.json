@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": "2",
       "name": "super admin",
-      "username": "super admin",
-      "password": "password",
+      "username": "superadmin",
+      "password": "$2a$10$AAx4H42HfbeTDRwvfKPMdeIXWI3pK3L/vc0g3ZZxnpvOu9NT/OjJ6",
       "type": "ADMIN",
       "created_at": "'2025-01-04T08:15:10.587Z"
     },
@@ -12,81 +12,65 @@
       "id": "2",
       "name": "admin",
       "username": "admin",
-      "password": "password",
+      "password": "$2a$10$AAx4H42HfbeTDRwvfKPMdeIXWI3pK3L/vc0g3ZZxnpvOu9NT/OjJ6",
       "type": "ADMIN",
       "created_at": "'2025-01-04T08:15:10.587Z"
     },
     {
-      "id": "94f2",
-      "name": "Shayhan Sagufta12",
-      "username": "sayhan_sagufta23",
-      "password": "$2a$10$MzMq9dwBdsgKrU3.V2tQQuv26x.oZ2HJ9RA7.uBQPy7wB6wr2.uGS",
+      "id": "10e3",
+      "name": "super admin",
+      "username": "superadmin",
+      "password": "$2a$10$TFzcKF108BR12zqcYSl.Q.Lbvw2U/LdTgTiOuUJmzwqprMMR7dpgq",
       "type": "USER",
-      "created_at": "2025-01-07T18:11:56.827Z"
+      "created_at": "2025-01-09T09:46:37.174Z"
     },
     {
-      "id": "dc49",
-      "name": "Shayhan Sagufta13",
-      "username": "shayhn_uiux",
-      "password": "$2a$10$fLViyw8I8Vnr0frHQEtGoexdKTfS6nPdVJZWkUrMjReYE6h/kjuFK",
+      "id": "35d5",
+      "name": "admin",
+      "username": "admin",
+      "password": "$2a$10$OeQ10RqQs1EaLsPSrGIkluGcNisEK4SuQjxdTV7XxiSSe0GfWxuJe",
       "type": "USER",
-      "created_at": "2025-01-07T18:18:24.865Z"
+      "created_at": "2025-01-09T09:47:55.485Z"
     },
     {
-      "id": "1c96",
-      "name": "ShayhanSagufta123",
-      "username": "Shayhan122",
-      "password": "$2a$10$gZZwblNN0xcu8D5Dl5LSJO90Zbfgmxliu1yc3X/661VBXUwN.JZT2",
-      "type": "USER",
-      "created_at": "2025-01-07T19:03:43.247Z"
-    },
-    {
-      "id": "9765",
-      "name": "Shayhan",
-      "username": "2020",
-      "password": "$2a$10$KPyi3tB41G6sZJVqt7l3WeN.ZXh.Jn.oYevtlFlWjbpSz0JJYEw/i",
-      "type": "USER",
-      "created_at": "2025-01-07T19:07:25.447Z"
-    },
-    {
-      "id": "7142",
-      "name": "Shayhan",
-      "username": "2020",
-      "password": "$2a$10$JhMmw/lEn0QMGMzBhsDVG.uM672mmfyvV9e6XXrPb7Z6Qd8h.MBNW",
-      "type": "USER",
-      "created_at": "2025-01-07T19:07:32.666Z"
-    },
-    {
-      "id": "c074",
-      "name": "Shayhan Sagufta",
-      "username": "sayhan_sagufta23",
-      "password": "$2a$10$qBHWf42dMcJi8XarruIMEeYBhiIAKzETUma7O0Uup9Nt70CAvacDu",
-      "type": "USER",
-      "created_at": "2025-01-07T19:08:34.817Z"
-    },
-    {
-      "id": "de40",
-      "name": "Shayhan Sagufta",
-      "username": "Shayhan1223",
-      "password": "$2a$10$2kZhrpL9.aq6ZqpbTyiGvOmPmY34R6QqWzhwnFh2Kjvod9dR7dYDG",
-      "type": "USER",
-      "created_at": "2025-01-07T19:10:59.998Z"
-    },
-    {
-      "id": "59b9",
-      "name": "Shayhan Sagufta",
-      "username": "sayhan_sagufta233",
-      "password": "$2a$10$T5xtYHzcyyqu0U4gYXpdLuRlryDjiep6NSxYN6ysWZeCQv/e7ehE2",
-      "type": "USER",
-      "created_at": "2025-01-07T19:13:46.733Z"
-    },
-    {
-      "id": "2ef4",
+      "id": "8952",
       "name": "Sayhan Sagufta",
-      "username": "1120120119",
-      "password": "$2a$10$BvCzYVnYboA9lBpFsIghPukBBhgnk7YIyw4exaBzUdLAmJtdukUOG",
+      "username": "shayhan12",
+      "password": "$2a$10$yld1Z4hJHSjs6xu.sGGSqOAFl9FFVklX3YktBHif.6TPDJVheNqSK",
       "type": "USER",
-      "created_at": "2025-01-07T19:40:15.565Z"
+      "created_at": "2025-01-09T09:51:51.660Z"
+    },
+    {
+      "id": "3202",
+      "name": "admin",
+      "username": "admin12",
+      "password": "$2a$10$mSDnDjD.tiYCEb.NGQYB1eyAZ2GfqzL4eUlwRplaroTbKarsu.9/y",
+      "type": "USER",
+      "created_at": "2025-01-09T09:52:31.176Z"
+    },
+    {
+      "id": "8d34",
+      "name": "Kylian Mbappe",
+      "username": "Mbappe22",
+      "password": "$2a$10$Jx9GtTnnZyunQTSpt9nZqehb6byodtetYPcP9DTKsc650lwNRcL1m",
+      "type": "USER",
+      "created_at": "2025-01-09T09:57:52.505Z"
+    },
+    {
+      "id": "0960",
+      "name": "Shayhan Sagufta",
+      "username": "sayhan123",
+      "password": "$2a$10$3QbXlJ05ynVlEhoak3F0u.eNz/SH59.O.LG97t6PDqbgmjvG0axXe",
+      "type": "USER",
+      "created_at": "2025-01-09T10:09:40.007Z"
+    },
+    {
+      "id": "309f",
+      "name": "Shayhan Sagufta",
+      "username": "shayhan112",
+      "password": "$2a$10$XFy0KvbdL9hpsfz.rOTuGeCyTg14wQIfTxthbyBhwrbq42suWTBh2",
+      "type": "USER",
+      "created_at": "2025-01-09T10:13:28.289Z"
     }
   ],
   "categories": [

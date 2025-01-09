@@ -5,29 +5,22 @@ import { Button, Input } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 import { loginUser } from "../services/userService";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
-// Validate Login Section
 const LoginFormSchema = z.object({
-  // validasi username
   username: z
     .string()
     .min(3, "Username Harus Memiliki Setidaknya 3 Karakter")
-    .regex(/^[a-zA-Z0-9_]+$/, "Username Hanya Boleh Berisi Huruf, Angka, dan UnderScore"),
-  // Validasi Password
+    .regex(/^[a-zA-Z0-9_ ]+$/, "Username Hanya Boleh Berisi Huruf, Angka, dan UnderScore"),
   password: z.string().min(6, "Password Harus Memiliki Setidaknya 6 Karakter").max(20, "Password Tidak Boleh Lebih dari 20 Karakter"),
 });
 
 const SignIn = () => {
-  // Styles
   const styles = {
     backgroundColor: "#EFF3FA",
     height: "100vh",
   };
-
-  // Using hook userNavigate from react-router-dom
   const navigate = useNavigate();
-
-  // Setup React Hook Form dengan Resolver Zod
   const form = useForm({
     defaultValues: {
       username: "",
@@ -36,66 +29,57 @@ const SignIn = () => {
     resolver: zodResolver(LoginFormSchema),
   });
 
-  // fungsi untuk login
   const loggedIn = async (loginData) => {
     try {
       const response = await loginUser(loginData);
-      console.log("Response Data:", response);
-      navigate("/");
+      toast.success(`Login Berhasil! Selamat datang, ${response.username}!`);
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } catch (error) {
-      console.error("Terjadi Kesalahan saat login: ", error);
-      throw error;
+      toast.error("Login Gagal! Silahkan Coba Lagi Nanti!");
+      throw new error();
     }
   };
 
   return (
-    // Container
-    <div className="py-2" style={styles}>
-      {/* Background Image */}
+    <div data-aos="fade-down" data-aos-duration="1000" className="py-2" style={styles}>
       <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
-        <div className="hidden lg:block lg:w-1/2 bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')" }}></div>
+        <div className="hidden lg:block lg:w-1/2 bg-cover" style={{ backgroundImage: "url('src/assets/png/img1.avif')" }}></div>
 
-        {/* Form Section */}
         <form onSubmit={form.handleSubmit(loggedIn)} className="w-full p-8 lg:w-1/2">
           <h2 className="text-2xl font-bold text-slate-950 text-left">Login dulu ya!</h2>
           <p className="text-small py-3 font-normal text-slate-700">Masuk ke akunmu untuk melanjutkan! Nikmati kemudahan akses dan fitur eksklusif hanya untuk pengguna terdaftar.</p>
 
-          {/* Username Section */}
           <div className="mt-4">
-            {/* Input Username */}
             <label className="block text-gray-700 text-sm font-bold mb-2">Username</label>
-            {/* Validasi Input Username */}
             <Controller
               name="username"
               control={form.control}
               render={({ field, fieldState }) => {
-                return <Input {...field} type="text" placeholder="Masukkan Username..." isInvalid={Boolean(fieldState.error)} errorMessage={fieldState.error?.message} />;
+                return <Input {...field} type="text" placeholder="Masukkan Username..." isInvalid={Boolean(fieldState.error)} errorMessage={fieldState.error?.message} autoComplete="username" />;
               }}
             />
           </div>
 
-          {/* Password Section */}
           <div className="mt-4">
-            {/* Input Password */}
             <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
-            {/* Validate Input Password */}
+
             <Controller
               name="password"
               control={form.control}
               render={({ field, fieldState }) => {
-                return <Input {...field} placeholder="Masukkan Password..." type="password" isInvalid={Boolean(fieldState.error)} errorMessage={fieldState.error?.message} />;
+                return <Input {...field} placeholder="Masukkan Password..." type="password" isInvalid={Boolean(fieldState.error)} errorMessage={fieldState.error?.message} autoComplete="current-password" />;
               }}
             />
           </div>
 
-          {/* Button Login Section */}
           <div className="mt-8">
             <Button type="submit" className="bg-buttonColor text-white font-bold py-2 px-4 w-full rounded-[20px] hover:bg-buttonColorHover">
               Masuk
             </Button>
           </div>
 
-          {/* Link to Apakah pengguna belum mempunyai akun */}
           <div className="mt-4 flex items-center justify-between">
             <span className="border-b w-1/5 md:w-1/4"></span>
             <Link to="/signup" className="text-xs text-buttonColor">
@@ -103,9 +87,9 @@ const SignIn = () => {
             </Link>
             <span className="border-b w-1/5 md:w-1/4"></span>
           </div>
-          {/* End Form Section */}
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

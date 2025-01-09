@@ -1,5 +1,5 @@
-const { nextui } = require("@nextui-org/react");
-const flowbite = require("flowbite-react/tailwind");
+const { nextui } = require ("@nextui-org/react");
+const flowbite = require( "flowbite-react/tailwind");
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
