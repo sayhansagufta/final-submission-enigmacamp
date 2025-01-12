@@ -1,76 +1,50 @@
 {
   "users": [
     {
-      "id": "2",
-      "name": "super admin",
-      "username": "superadmin",
-      "password": "$2a$10$AAx4H42HfbeTDRwvfKPMdeIXWI3pK3L/vc0g3ZZxnpvOu9NT/OjJ6",
+      "name": "superadmin",
+      "username": "superadmin2",
+      "password": "sehan123",
       "type": "ADMIN",
-      "created_at": "'2025-01-04T08:15:10.587Z"
+      "id": "1"
     },
     {
-      "id": "2",
-      "name": "admin",
-      "username": "admin",
-      "password": "$2a$10$AAx4H42HfbeTDRwvfKPMdeIXWI3pK3L/vc0g3ZZxnpvOu9NT/OjJ6",
+      "name": "admin2",
+      "username": "admin2",
+      "password": "sehan123",
       "type": "ADMIN",
-      "created_at": "'2025-01-04T08:15:10.587Z"
+      "id": "2"
     },
     {
-      "id": "10e3",
-      "name": "super admin",
-      "username": "superadmin",
-      "password": "$2a$10$TFzcKF108BR12zqcYSl.Q.Lbvw2U/LdTgTiOuUJmzwqprMMR7dpgq",
-      "type": "USER",
-      "created_at": "2025-01-09T09:46:37.174Z"
-    },
-    {
-      "id": "35d5",
-      "name": "admin",
-      "username": "admin",
-      "password": "$2a$10$OeQ10RqQs1EaLsPSrGIkluGcNisEK4SuQjxdTV7XxiSSe0GfWxuJe",
-      "type": "USER",
-      "created_at": "2025-01-09T09:47:55.485Z"
-    },
-    {
-      "id": "8952",
-      "name": "Sayhan Sagufta",
-      "username": "shayhan12",
-      "password": "$2a$10$yld1Z4hJHSjs6xu.sGGSqOAFl9FFVklX3YktBHif.6TPDJVheNqSK",
-      "type": "USER",
-      "created_at": "2025-01-09T09:51:51.660Z"
-    },
-    {
-      "id": "3202",
-      "name": "admin",
-      "username": "admin12",
-      "password": "$2a$10$mSDnDjD.tiYCEb.NGQYB1eyAZ2GfqzL4eUlwRplaroTbKarsu.9/y",
-      "type": "USER",
-      "created_at": "2025-01-09T09:52:31.176Z"
-    },
-    {
-      "id": "8d34",
-      "name": "Kylian Mbappe",
-      "username": "Mbappe22",
-      "password": "$2a$10$Jx9GtTnnZyunQTSpt9nZqehb6byodtetYPcP9DTKsc650lwNRcL1m",
-      "type": "USER",
-      "created_at": "2025-01-09T09:57:52.505Z"
-    },
-    {
-      "id": "0960",
       "name": "Shayhan Sagufta",
-      "username": "sayhan123",
-      "password": "$2a$10$3QbXlJ05ynVlEhoak3F0u.eNz/SH59.O.LG97t6PDqbgmjvG0axXe",
-      "type": "USER",
-      "created_at": "2025-01-09T10:09:40.007Z"
+      "username": "shayhansagufta",
+      "password": "sehan123",
+      "created_at": "2025-01-12T13:04:22.793Z",
+      "type": "ADMIN",
+      "id": "3"
     },
     {
-      "id": "309f",
       "name": "Shayhan Sagufta",
-      "username": "shayhan112",
-      "password": "$2a$10$XFy0KvbdL9hpsfz.rOTuGeCyTg14wQIfTxthbyBhwrbq42suWTBh2",
+      "username": "Shayhan1112",
+      "password": "sehan123",
+      "created_at": "2025-01-12T13:22:07.778Z",
+      "type": "ADMIN",
+      "id": "f02e"
+    },
+    {
+      "name": "Shayhan Sagufta",
+      "username": "sehan123",
+      "password": "sehan123",
+      "created_at": "2025-01-12T14:05:46.384Z",
+      "type": "ADMIN",
+      "id": "c09c"
+    },
+    {
+      "name": "Shayhan Sagufta 11",
+      "username": "sehan11",
+      "password": "sehan123",
+      "created_at": "2025-01-12T14:14:49.586Z",
       "type": "USER",
-      "created_at": "2025-01-09T10:13:28.289Z"
+      "id": "5fd2"
     }
   ],
   "categories": [
@@ -83,7 +57,7 @@
   "notes": [
     {
       "id": "1",
-      "userId": "1",
+      "userId": null,
       "categoryId": "1",
       "title": "hello hai",
       "body": "haii haii",
@@ -92,7 +66,7 @@
     },
     {
       "id": "2",
-      "userId": "1",
+      "userId": null,
       "categoryId": "1",
       "title": "hello hai",
       "body": "haii haii",
@@ -103,13 +77,13 @@
   "favorites": [
     {
       "id": "1",
-      "userId": "1",
+      "userId": null,
       "noteId": "1",
       "created_at": "'2025-01-04T08:15:10.587Z"
     },
     {
       "id": "2",
-      "userId": "2",
+      "userId": null,
       "noteId": "1",
       "created_at": "'2025-01-04T08:15:10.587Z"
     }

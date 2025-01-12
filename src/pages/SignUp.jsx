@@ -1,5 +1,4 @@
 import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input } from "@nextui-org/react";
 import { Link } from "react-router-dom";
@@ -7,21 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { registerUser } from "../services/userService";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const signUpFormSchema = z
-  .object({
-    name: z.string().min(3, "Nama Lengkap Harus Memiliki Setidaknya 3 Karakter!").max(50, "Nama Lengkap Tidak Boleh Lebih dari 50 Karakter!"),
-    username: z
-      .string()
-      .min(3, "Username Harus Memiliki Setidaknya 3 Karakter")
-      .regex(/^[a-zA-Z0-9_]+$/, "Username Hanya Boleh Berisi Huruf, Angka, dan UnderScore"),
-    password: z.string().min(6, "Password harus memiliki setidaknya 6 Karakter").max(20, "Password Tidak Boleh Lebih dari 20 Karakter"),
-    confirmPassword: z.string(),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ["confirmPassword"],
-    message: "Password dan Konfirmasi Password Harus Sama!",
-  });
+import { SignUpFormSchema2 } from "../schema/SchemaValidation";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -36,7 +21,7 @@ const SignUp = () => {
       password: "",
       confirmPassword: "",
     },
-    resolver: zodResolver(signUpFormSchema),
+    resolver: zodResolver(SignUpFormSchema2),
   });
   const addRegisterUser = async (userData) => {
     try {

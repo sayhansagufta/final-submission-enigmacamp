@@ -19,6 +19,15 @@ const Navbar = () => {
         <NavLink to="/tentang-kami" className={({ isActive }) => `rounded-[20px] px-5 py-2 hover:bg-[#5647F9] hover:text-white ${isActive ? "bg-[#5647F9] text-white" : "border border-[#5647F9] text-[#5647F9] bg-white"}`}>
           Tentang Kami
         </NavLink>
+        <NavLink
+          to="/user"
+          className={({ isActive }) =>
+            `rounded-[20px] px-5 py-2 hover:bg-[#5647F9] 
+hover:text-white ${isActive ? "bg-[#5647F9] text-white" : "border border-[#5647F9] text-[#5647F9] bg-white"}`
+          }
+        >
+          User
+        </NavLink>
       </div>
       <NavLink to="/login">
         <Button

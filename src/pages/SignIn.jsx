@@ -1,19 +1,11 @@
 import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 import { loginUser } from "../services/userService";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-
-const LoginFormSchema = z.object({
-  username: z
-    .string()
-    .min(3, "Username Harus Memiliki Setidaknya 3 Karakter")
-    .regex(/^[a-zA-Z0-9_ ]+$/, "Username Hanya Boleh Berisi Huruf, Angka, dan UnderScore"),
-  password: z.string().min(6, "Password Harus Memiliki Setidaknya 6 Karakter").max(20, "Password Tidak Boleh Lebih dari 20 Karakter"),
-});
+import { LoginFormSchema } from "../schema/SchemaValidation";
 
 const SignIn = () => {
   const styles = {
@@ -37,8 +29,8 @@ const SignIn = () => {
         navigate("/");
       }, 2000);
     } catch (error) {
-      toast.error("Login Gagal! Silahkan Coba Lagi Nanti!");
-      throw new error();
+      toast.error(error.message || "Login Gagal! Silahkan Coba Lagi Nanti!");
+      console.log("Error:", error);
     }
   };
 
